@@ -14,8 +14,8 @@ Error la contraseña no debe tener espacios en blanco
 Contraseña: “ContraseñA495*”
 Contraseña valida"""
 
-c_especiales =["*","_","-","¿","¡","?","#","$"]
-checar_validez =[False,False,False,False]
+c_especiales = ["*","_","-","¿","¡","?","#","$"]
+checar_validez = [False,False,False,False]
 
 def primera_regla(pswrd):
     #funcion para comprobar que tiene almenos 2 letras mayusculas
@@ -43,19 +43,19 @@ print("ingrese la contraseña a validar")
 p_checar = input().lower()
 
 if primera_regla(p_checar):
-    checar_validez[0]=True
+    checar_validez[0] = True
 else:
     print("Error la contraseña debe tener al menos 2 letras mayusculas")
 if segunda_regla(p_checar):
-    checar_validez[1]=True
+    checar_validez[1] = True
 else:
     print("Error la contraseña debe tener 3 numeros y que no se repitan")
 if tercera_regla(p_checar):
-    checar_validez[2]=True
+    checar_validez[2] = True
 else:
     print("Error la contraseña debe tener al menos un carácter especial (* _ - ¿ ¡ ? # $)")
 if cuarta_quinta_regla(p_checar):
-    checar_validez[3]=True
+    checar_validez[3] = True
 else:
     print("Error la contraseña no debe tener espacios en blanco y que no sea menor a 8 ni mayor a 15")
 if all(checar_validez):

@@ -22,15 +22,22 @@ Ejemplos: Cons-truc-ción, ins-truc-ción."""
 
 import pyphen
 
-separador =pyphen.Pyphen(lang='es')
+excepciones = ["agujero","atlantico"]
+excepciones_separadas = ["a-gu-je-ro","a-tlan-ti-co"]
+separador = pyphen.Pyphen(lang='es_US')
 
-def test():
+"""def test():
     words_test=["agujero","pelotero","inmenson","gimnasta","refresco","aflojar","calle","cerro",
-    "inspector","obstaculizar","Atlantico","hambre","construccion","instrucción"]
+    "inspector","obstaculizar","atlantico","hambre","construccion","instrucción"]
     for element in words_test:
-        print(separador.inserted(element))
+        print(separador.inserted(element))"""
     
 print("ingrese una palabra que quiera separa por silabas")
 palabra = input().lower()
-print(separador.inserted(palabra))
-
+if any(element in palabra for element in excepciones):
+    for position,element in enumerate(excepciones):
+        if palabra == element:
+            print(excepciones_separadas[position])
+            break
+else:
+    print(separador.inserted(palabra))
