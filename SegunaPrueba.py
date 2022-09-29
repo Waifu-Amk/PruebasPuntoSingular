@@ -22,8 +22,8 @@ Ejemplos: Cons-truc-ción, ins-truc-ción."""
 
 import pyphen
 
-excepciones = ["agujero","atlantico"]
-excepciones_separadas = ["a-gu-je-ro","a-tlan-ti-co"]
+excepciones = ["agujero","atlantico","aflojar"]
+excepciones_separadas = ["a-gu-je-ro","a-tlan-ti-co","a-flo-jar"]
 separador = pyphen.Pyphen(lang='es_US')
 
 """def test():
